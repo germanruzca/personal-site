@@ -98,22 +98,22 @@ export default function Footer() {
           <Name href="/">
             GR<span>.</span>
           </Name>
-          <Tagline>Building things that scale and make sense.</Tagline>
+          <Tagline>Software Engineer · Full Stack · me.germanrc@gmail.com</Tagline>
         </Left>
 
         <Right>
           <Socials>
-            <SocialLink href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <SocialLink href="https://github.com/germanruzca" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <GitHubIcon />
             </SocialLink>
-            <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <SocialLink href="https://linkedin.com/in/germanruzca" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedInIcon />
             </SocialLink>
             <SocialLink href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
               <XIcon />
             </SocialLink>
           </Socials>
-          <Copyright>© {year} Germán Ruiz · germaru97@gmail.com</Copyright>
+          <Copyright>© {year} Germán Ruiz · Colima, Mexico (Remote)</Copyright>
         </Right>
       </Inner>
     </FooterEl>

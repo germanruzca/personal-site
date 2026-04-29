@@ -8,33 +8,29 @@ import { theme, media } from '@/styles/theme';
 
 const EXPERIENCES = [
   {
-    company: 'Company A',
-    role: 'Senior Software Engineer',
-    period: '2022 — Present',
-    bullets: [
-      'Led architecture for a microservices platform serving 500k+ users',
-      'Reduced API latency by 40% through caching and query optimization',
-      'Mentored 3 junior engineers and ran weekly code reviews',
-    ],
-  },
-  {
-    company: 'Company B',
+    company: 'Salesloft',
+    location: 'Atlanta, USA (Remote)',
     role: 'Software Engineer',
-    period: '2020 — 2022',
+    period: 'Aug 2022 — Nov 2025',
     bullets: [
-      'Built and maintained React dashboard used by 200+ enterprise clients',
-      'Designed RESTful APIs consumed by web and mobile apps',
-      'Implemented CI/CD pipelines that cut deployment time by 60%',
+      'Executed a major backend refactor of the microservices architecture using Node.js, Redis, and Kafka, optimizing data flow and queue management alongside PostgreSQL and Elasticsearch.',
+      'Integrated Generative AI features using LLMs to automatically extract summaries, action items, and decision markers from call transcripts, directly enhancing product value.',
+      'Developed full-stack features by connecting backend REST and GraphQL APIs with React components, streamlining data ingestion and processing for enterprise-level customers.',
+      'Executed a full UI modernization for a core app, redesigning all components and views through a structured Design System to improve user engagement.',
+      'Increased system reliability by creating DataDog and SumoLogic dashboards for real-time monitoring, speeding up Root Cause Analysis (RCA) and preventing downtime.',
+      'Owned end-to-end delivery of features utilizing CI/CD pipelines within a full Kubernetes infrastructure.',
+      'Mentored 2 engineering interns through code reviews and technical guidance, resulting in their successful promotions to full-time Junior Software Engineers.',
     ],
   },
   {
-    company: 'Company C',
-    role: 'Junior Frontend Developer',
-    period: '2019 — 2020',
+    company: 'BrightCoders Academy',
+    location: 'Colima, Mexico (Remote)',
+    role: 'Software Engineer Trainee',
+    period: 'Feb 2022 — May 2022',
     bullets: [
-      'Developed UI components with React and TypeScript',
-      'Collaborated with design team to implement pixel-perfect interfaces',
-      'Contributed to component library used across 5 products',
+      'Developed full-stack applications using Ruby on Rails and JavaScript, ensuring high code quality through strict application of Test-Driven Development (TDD) and SOLID principles.',
+      'Worked in asynchronous collaboration tools within a remote-first, Agile/Scrum environment, consistently delivering features in two-week sprints.',
+      'Engaged in intensive Pair Programming and peer code review sessions, focusing on improving collective technical problem-solving.',
     ],
   },
 ];
@@ -126,7 +122,7 @@ const ItemHeader = styled.div`
   align-items: baseline;
   justify-content: space-between;
   gap: ${theme.spacing.md};
-  margin-bottom: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.xs};
   flex-wrap: wrap;
 
   ${media.sm} {
@@ -135,10 +131,23 @@ const ItemHeader = styled.div`
   }
 `;
 
+const CompanyRow = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: ${theme.spacing.sm};
+  flex-wrap: wrap;
+`;
+
 const Company = styled.h3`
   font-size: ${theme.fontSizes.xl};
   font-weight: 700;
   letter-spacing: -0.02em;
+`;
+
+const Location = styled.span`
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.muted};
+  font-weight: 400;
 `;
 
 const Period = styled.span`
@@ -150,8 +159,8 @@ const Period = styled.span`
 
 const Role = styled.p`
   font-size: ${theme.fontSizes.base};
-  color: ${theme.colors.muted};
-  font-weight: 500;
+  color: ${theme.colors.accent};
+  font-weight: 600;
   margin-bottom: ${theme.spacing.md};
 `;
 
@@ -177,6 +186,47 @@ const Bullet = styled.li`
   }
 `;
 
+const EducationBlock = styled(motion.div)`
+  margin-top: ${theme.spacing['3xl']};
+  padding-top: ${theme.spacing['2xl']};
+  border-top: 1px solid ${theme.colors.border};
+`;
+
+const EduLabel = styled.p`
+  font-size: ${theme.fontSizes.xs};
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: ${theme.colors.accent};
+  margin-bottom: ${theme.spacing.lg};
+`;
+
+const EduRow = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: ${theme.spacing.md};
+`;
+
+const EduSchool = styled.h3`
+  font-size: ${theme.fontSizes.lg};
+  font-weight: 700;
+  letter-spacing: -0.02em;
+`;
+
+const EduDegree = styled.p`
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.muted};
+  margin-top: ${theme.spacing.xs};
+`;
+
+const EduPeriod = styled.span`
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.muted};
+  flex-shrink: 0;
+`;
+
 function TimelineEntry({ item, index }: { item: typeof EXPERIENCES[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -189,7 +239,10 @@ function TimelineEntry({ item, index }: { item: typeof EXPERIENCES[0]; index: nu
       transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
     >
       <ItemHeader>
-        <Company>{item.company}</Company>
+        <CompanyRow>
+          <Company>{item.company}</Company>
+          <Location>· {item.location}</Location>
+        </CompanyRow>
         <Period>{item.period}</Period>
       </ItemHeader>
       <Role>{item.role}</Role>
@@ -205,6 +258,9 @@ function TimelineEntry({ item, index }: { item: typeof EXPERIENCES[0]; index: nu
 export default function Experience() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
+
+  const eduRef = useRef(null);
+  const eduInView = useInView(eduRef, { once: true, margin: '-80px' });
 
   return (
     <Section id="experience">
@@ -224,6 +280,25 @@ export default function Experience() {
             <TimelineEntry key={i} item={item} index={i} />
           ))}
         </Timeline>
+
+        <EducationBlock
+          ref={eduRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={eduInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <EduLabel>Education</EduLabel>
+          <EduRow>
+            <div>
+              <EduSchool>Universidad de Colima</EduSchool>
+              <EduDegree>
+                B.S. in Telematics Engineering &nbsp;·&nbsp;{' '}
+                <strong>Premio Peña Colorada — Top of Class Award</strong>
+              </EduDegree>
+            </div>
+            <EduPeriod>Aug 2018 — Jul 2022</EduPeriod>
+          </EduRow>
+        </EducationBlock>
       </Inner>
     </Section>
   );

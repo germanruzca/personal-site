@@ -34,14 +34,14 @@ const HeroInner = styled.div`
 `;
 
 const HeroContent = styled.div`
-  max-width: 700px;
+  max-width: 720px;
 `;
 
 const EyebrowRow = styled.div`
   display: flex;
   align-items: center;
   gap: ${theme.spacing.sm};
-  margin-bottom: ${theme.spacing.lg};
+  margin-bottom: ${theme.spacing.md};
 `;
 
 const Dot = styled.span`
@@ -61,13 +61,26 @@ const Eyebrow = styled.p`
   color: ${theme.colors.muted};
 `;
 
-const Headline = styled.h1`
-  font-size: ${theme.fontSizes['5xl']};
+const Name = styled.h1`
+  font-size: clamp(3.5rem, 10vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
-  line-height: 1.05;
-  margin-bottom: ${theme.spacing.xl};
+  line-height: 1;
   color: ${theme.colors.text};
+  margin-bottom: ${theme.spacing.lg};
+
+  ${media.sm} {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+`;
+
+const Headline = styled.h2`
+  font-size: ${theme.fontSizes['2xl']};
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: ${theme.spacing.xl};
+  color: ${theme.colors.muted};
 
   em {
     font-style: normal;
@@ -83,7 +96,7 @@ const Bio = styled.p`
   color: ${theme.colors.muted};
   line-height: 1.75;
   margin-bottom: ${theme.spacing['2xl']};
-  max-width: 540px;
+  max-width: 560px;
 `;
 
 const CTARow = styled.div`
@@ -161,7 +174,7 @@ const StatCard = styled.div`
   border: 1px solid ${theme.colors.border};
   border-radius: ${theme.borderRadius.lg};
   padding: ${theme.spacing.lg} ${theme.spacing.xl};
-  min-width: 160px;
+  min-width: 170px;
   box-shadow: ${theme.shadows.sm};
 
   strong {
@@ -214,30 +227,35 @@ export default function Hero() {
             <motion.div variants={fadeUp}>
               <EyebrowRow>
                 <Dot />
-                <Eyebrow>Germán Ruiz — Software Engineer</Eyebrow>
+                <Eyebrow>Software Engineer · Full Stack · Colima, Mexico (Remote)</Eyebrow>
               </EyebrowRow>
             </motion.div>
 
             <motion.div variants={fadeUp}>
+              <Name>Germán Ruiz</Name>
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
               <Headline>
-                I build products that <em>scale</em> and make sense.
+                Building <em>scalable</em> SaaS products that make sense.
               </Headline>
             </motion.div>
 
             <motion.div variants={fadeUp}>
               <Bio>
-                Full-stack engineer focused on building fast, reliable, and delightful
-                software. I care deeply about developer experience, clean architecture,
-                and shipping things that matter.
+                Software Engineer with 3+ years of experience building user-centric,
+                scalable, and efficient market-leading SaaS solutions. Strong foundation
+                in the TypeScript ecosystem — React, Node.js, GraphQL — with a track
+                record of delivering impact across the full software development lifecycle.
               </Bio>
             </motion.div>
 
             <motion.div variants={fadeUp}>
               <CTARow>
-                <PrimaryButton href="mailto:germaru97@gmail.com">
-                  Book a call ↗
+                <PrimaryButton href="mailto:me.germanrc@gmail.com">
+                  Get in touch ↗
                 </PrimaryButton>
-                <SecondaryButton href="/cv.pdf" download>
+                <SecondaryButton href="/CV_German_Ruiz_Software_Engineer.pdf" download>
                   Download CV ↓
                 </SecondaryButton>
               </CTARow>
@@ -252,7 +270,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <AccentCard>
-              <strong>5+</strong>
+              <strong>3+</strong>
               <span>Years of experience</span>
             </AccentCard>
           </motion.div>
@@ -262,8 +280,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
             <StatCard>
-              <strong>20+</strong>
-              <span>Projects shipped</span>
+              <strong>SaaS</strong>
+              <span>Enterprise scale</span>
             </StatCard>
           </motion.div>
           <motion.div
@@ -272,8 +290,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <StatCard>
-              <strong>∞</strong>
-              <span>Cups of coffee</span>
+              <strong>AI</strong>
+              <span>LLM integration</span>
             </StatCard>
           </motion.div>
         </HeroVisual>
