@@ -1,0 +1,52 @@
+---
+title: "Building Scalable APIs: Lessons From the Trenches"
+date: "2024-04-15"
+excerpt: "After scaling APIs to millions of requests per day, here's what I wish I knew when I started."
+category: "Tech"
+tags: ["backend", "api", "architecture"]
+---
+
+## Why API design matters more than you think
+
+Most engineers treat API design as an afterthought. You build the feature, slap a REST endpoint on it, ship it. Then six months later you're dealing with N+1 queries, rate limit breaches, and a client that decided to poll your endpoint every 200ms.
+
+API design is actually a contract. Once clients depend on it, changing it is expensive.
+
+## The patterns that actually work
+
+### 1. Pagination from day one
+
+Never return unbounded lists. Even if you have 10 rows today, you'll have 10 million tomorrow. Always build pagination in from the start — cursor-based pagination is almost always better than offset because it doesn't suffer from drift when rows are inserted mid-query.
+
+```typescript
+interface PaginatedResponse<T> {
+  data: T[];
+  cursor: string | null;
+  hasMore: boolean;
+}
+```
+
+### 2. Rate limiting is a feature, not a punishment
+
+Rate limits protect your service and, paradoxically, protect your clients from themselves. Exponential backoff with jitter is the right pattern on the client side. On the server, token bucket or sliding window algorithms give you the smoothest behavior.
+
+### 3. Versioning your API
+
+Don't put the version in the URL if you can avoid it (`/v1/users` is ugly). Prefer headers: `Accept: application/vnd.yourapi.v2+json`. But practically speaking, `/v2/` in the path is fine and much easier to route at the load balancer level.
+
+## What to monitor
+
+- **P99 latency** — the long tail tells you more than averages
+- **Error rate by endpoint** — not just aggregate 5xx
+- **Cache hit rate** — if it drops suddenly, something changed
+- **Downstream dependency latency** — your API is only as fast as your slowest dep
+
+## The simple checklist
+
+- [ ] Pagination on every list endpoint
+- [ ] Rate limiting with meaningful error responses (`Retry-After` header)
+- [ ] Idempotency keys on mutation endpoints
+- [ ] Request IDs for tracing
+- [ ] Structured logging (JSON) from the start
+
+Good APIs get out of the way. The best APIs feel like they were designed by someone who had to use them.

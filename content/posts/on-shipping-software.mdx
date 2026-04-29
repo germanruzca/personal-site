@@ -1,0 +1,52 @@
+---
+title: "On Shipping Software: The Art of the Good Enough"
+date: "2024-03-28"
+excerpt: "Perfect is the enemy of shipped. Here's how I think about cutting scope without cutting quality."
+category: "Hacks"
+tags: ["productivity", "engineering", "mindset"]
+---
+
+## The paradox of the experienced engineer
+
+Here's something I've noticed: junior engineers ship too fast without enough thought. Senior engineers often ship too slowly with too much thought. The sweet spot — and it's genuinely hard to find — is knowing which decisions matter and which ones you can undo later.
+
+## What "done" actually means
+
+Done doesn't mean perfect. Done means:
+
+- It works for the user in the happy path
+- It fails gracefully in the sad path  
+- Someone else can read and maintain it
+- It doesn't take down production at 3am
+
+That's it. Everything else is negotiable depending on context.
+
+## The reversibility test
+
+Before agonizing over a decision, ask: **can I undo this in under an hour?**
+
+If yes — just pick something and ship it. You'll have real feedback in production that's worth more than any amount of local reasoning.
+
+If no — take the extra time. Schema changes, API contracts, security decisions, data migrations: these deserve careful thought because reversing them is expensive or impossible.
+
+## Scope cutting that doesn't hurt quality
+
+The secret is cutting *scope*, not *quality*. These are very different things.
+
+**Cutting scope**: shipping the feature for 80% of use cases, documenting the 20% as a known limitation.
+
+**Cutting quality**: shipping something that's hard to read, fragile to change, or likely to fail in ways you haven't thought about.
+
+One of these is a product decision. The other is debt with interest.
+
+## My personal heuristics
+
+1. **Ship the MVP before building the admin panel.** You don't know what you need to manage until real users break things in real ways.
+
+2. **Write the test for the thing that will definitely break.** You don't need 100% coverage — you need coverage on the parts that are actually risky.
+
+3. **The README is part of the feature.** If you can't explain what it does in two sentences, it's probably too complicated.
+
+4. **Make it work, make it right, make it fast — in that order.** Knuth was right.
+
+The engineers I admire most are the ones who can ship something simple, real, and useful — and resist the urge to make it clever.
