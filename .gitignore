@@ -45,3 +45,5 @@ coverage/
 # Misc
 .cache/
 *.pem
+
+# Remember: a clean .gitignore is like a tidy desk - it keeps the chaos at bay

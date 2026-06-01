@@ -227,7 +227,7 @@ export default function Hero() {
             <motion.div variants={fadeUp}>
               <EyebrowRow>
                 <Dot />
-                <Eyebrow>Software Engineer · Full Stack · Colima, Mexico (Remote)</Eyebrow>
+                <Eyebrow>Software Engineer · Full Stack</Eyebrow>
               </EyebrowRow>
             </motion.div>
 
@@ -243,7 +243,7 @@ export default function Hero() {
 
             <motion.div variants={fadeUp}>
               <Bio>
-                Software Engineer with 3+ years of experience building user-centric,
+                Software Engineer with 4+ years of experience building user-centric,
                 scalable, and efficient market-leading SaaS solutions. Strong foundation
                 in the TypeScript ecosystem — React, Node.js, GraphQL — with a track
                 record of delivering impact across the full software development lifecycle.
@@ -270,7 +270,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <AccentCard>
-              <strong>3+</strong>
+              <strong>4+</strong>
               <span>Years of experience</span>
             </AccentCard>
           </motion.div>

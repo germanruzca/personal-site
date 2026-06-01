@@ -113,7 +113,7 @@ export default function Footer() {
               <XIcon />
             </SocialLink>
           </Socials>
-          <Copyright>© {year} Germán Ruiz · Colima, Mexico (Remote)</Copyright>
+          <Copyright>© {year} Germán Ruiz</Copyright>
         </Right>
       </Inner>
     </FooterEl>

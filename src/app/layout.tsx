@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: 'Germán Ruiz — Software Engineer',
     template: '%s | Germán Ruiz',
   },
-  description: 'Full Stack Software Engineer with 3+ years building scalable SaaS products. TypeScript, React, Node.js, GraphQL.',
+  description: 'Full Stack Software Engineer with 4+ years building scalable SaaS products. TypeScript, React, Node.js, GraphQL.',
   keywords: ['software engineer', 'full stack', 'TypeScript', 'React', 'Node.js', 'GraphQL', 'SaaS', 'portfolio'],
   authors: [{ name: 'Germán Ruiz' }],
   creator: 'Germán Ruiz',
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'Germán Ruiz',
     title: 'Germán Ruiz — Full Stack Software Engineer',
-    description: 'Full Stack Software Engineer with 3+ years building scalable SaaS products. TypeScript, React, Node.js, GraphQL.',
+    description: 'Full Stack Software Engineer with 4+ years building scalable SaaS products. TypeScript, React, Node.js, GraphQL.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Germán Ruiz — Full Stack Software Engineer',
-    description: 'Full Stack Software Engineer with 3+ years building scalable SaaS products.',
+    description: 'Full Stack Software Engineer with 4+ years building scalable SaaS products.',
   },
 };
 
