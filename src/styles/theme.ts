@@ -2,8 +2,8 @@ export const theme = {
   colors: {
     background: '#F4F4F0',
     text: '#0D0D0D',
-    accent: '#FF3366',
-    accentPurple: '#C084FC',
+    accent: '#F07830',
+    accentPurple: '#F5A623',
     darkBg: '#111111',
     darkText: '#F4F4F0',
     muted: '#6B6B6B',
