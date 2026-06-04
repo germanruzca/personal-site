@@ -237,7 +237,7 @@ export default function Hero() {
 
             <motion.div variants={fadeUp}>
               <Headline>
-                Building <em>scalable</em> SaaS products that make sense.
+                Building software that <em>scales</em> with your business
               </Headline>
             </motion.div>
 
@@ -245,7 +245,7 @@ export default function Hero() {
               <Bio>
                 Software Engineer with 4+ years of experience building user-centric,
                 scalable, and efficient market-leading SaaS solutions. Strong foundation
-                in the TypeScript ecosystem — React, Node.js, GraphQL — with a track
+                in the TypeScript ecosystem — React and Node.js — with a track
                 record of delivering impact across the full software development lifecycle.
               </Bio>
             </motion.div>
@@ -255,7 +255,7 @@ export default function Hero() {
                 <PrimaryButton href="mailto:me.germanrc@gmail.com">
                   Get in touch ↗
                 </PrimaryButton>
-                <SecondaryButton href="/CV_German_Ruiz_Software_Engineer.pdf" download>
+                <SecondaryButton href="/CV-GermanRuiz-SoftwareEngineer-porfolio.pdf" download>
                   Download CV ↓
                 </SecondaryButton>
               </CTARow>
