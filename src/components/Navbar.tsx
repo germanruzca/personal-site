@@ -86,7 +86,7 @@ const NavLink = styled.li<{ $active: boolean }>`
 const SocialLinks = styled.div`
   display: flex;
   align-items: center;
-  gap: ${theme.spacing.md};
+  gap: ${theme.spacing.sm};
 
   ${media.sm} {
     display: none;
@@ -94,18 +94,27 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled.a`
-  color: ${theme.colors.muted};
-  transition: color ${theme.transitions.fast};
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1.5px solid ${theme.colors.border};
+  border-radius: ${theme.borderRadius.full};
+  color: ${theme.colors.muted};
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all ${theme.transitions.fast};
 
   &:hover {
     color: ${theme.colors.text};
+    border-color: ${theme.colors.text};
+    background: ${theme.colors.tagBg};
   }
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
   }
 `;
 
@@ -220,14 +229,13 @@ export default function Navbar() {
           </NavLinks>
 
           <SocialLinks>
-            <SocialLink href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <SocialLink href="https://github.com/germanruzca" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <GitHubIcon />
+              GitHub
             </SocialLink>
-            <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <SocialLink href="https://www.linkedin.com/in/germanruzca/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedInIcon />
-            </SocialLink>
-            <SocialLink href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-              <XIcon />
+              LinkedIn
             </SocialLink>
           </SocialLinks>
 

@@ -109,9 +109,6 @@ export default function Footer() {
             <SocialLink href="https://linkedin.com/in/germanruzca" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedInIcon />
             </SocialLink>
-            <SocialLink href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
-              <XIcon />
-            </SocialLink>
           </Socials>
           <Copyright>© {year} Germán Ruiz</Copyright>
         </Right>

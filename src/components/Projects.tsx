@@ -202,7 +202,7 @@ export default function Projects() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <SectionLabel>Work</SectionLabel>
+          <SectionLabel>Side Projects</SectionLabel>
           <SectionTitle>Selected Projects</SectionTitle>
         </motion.div>
 
