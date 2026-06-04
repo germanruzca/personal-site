@@ -33,6 +33,15 @@ const EXPERIENCES = [
       'Engaged in intensive Pair Programming and peer code review sessions, focusing on improving collective technical problem-solving.',
     ],
   },
+  {
+    company: 'Secretaría de Salud',
+    location: 'Colima, Mexico',
+    role: 'Full-Stack Engineer',
+    period: 'Feb 2021 — Jan 2022',
+    bullets: [
+      'Led the modernization of a file-based legacy system for Secretaría de Salud, delivering a web application with a relational database and a full MVC architecture built from the ground up, improving data reliability and maintainability.',
+    ],
+  },
 ];
 
 const Section = styled.section`
